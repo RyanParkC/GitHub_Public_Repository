@@ -1,0 +1,52 @@
+body {
+    background-color: rgb(241, 241, 241);
+}
+
+h1, h6 {
+    text-align: center;
+    font-family:sans-serif;
+    color: rgb(64, 73, 112);
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+h6 {
+    font-weight: lighter;
+    font-size: 15px;
+    margin-top: 15px;
+}
+
+.container{
+    width: 800px;
+    margin: 10px;
+}
+
+.row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgb(85, 205, 241)
+}
+
+.row2{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: rgb(228, 167, 177)
+}
+
+.row3{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: white
+}
