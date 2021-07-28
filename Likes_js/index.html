@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <div class="ALLcontainer">
+        <div class="nav">
+            <h1 class="nav-title">Network</h1>
+        </div>
+        <h1 class="Title">Your Feed</h1>
+    
+        <div class="LEFT_RIGHTcontainer">
+            <div class="LEFTcontainer">
+                <div class="box1">
+                    <img class="userimage" src="user-circle.png" alt="profile pic">
+                    <a class="avatar" href="#">Add an avatar</a>
+                    <h3 class="james">James Doe</h3>
+                </div>
+            </div>
+            <div class="RIGHTcontainer">
+                <div class="box2">
+                    <div class="box2row1">
+                        <h3 class="names">Neil</h3>
+                        <div class="buttons">
+                            <button onclick="LikeCountBox1()" class="likes">9 like(s)</button>
+                            <button onclick="LikeButtonBox1(this)" class="Like">Like</button>
+                        </div>
+                    </div>
+                    <p>I just set up this new discord but, let me</p>
+                    <p>know what you all think.<a href="#">link</a></p>
+                </div>
+                <div class="box3">
+                    <div class="box3row1">
+                        <h3 class="names">Nichole K</h3>
+                        <div class="buttons">   
+                        <button onclick="LikeCountBox2(this)" class="likes">12 like(s)</button>
+                            <button onclick="LikeButtonBox2(this)" class="Like">Like</button>
+                        </div>
+                    </div>
+                    <p>Just finished my <a href="#">next comic, </a>check it out.</p>
+                </div>
+                <div class="box4">
+                    <div class="box4row1">
+                        <h3 class="names">Jim R</h3>
+                        <div class="buttons">
+                            <button onclick="LikeCountBox3()" class="likes">9 like(s)</button>
+                            <button onclick="LikeButtonBox3()" class="Like">Like</button>
+                        </div>
+                    </div>
+                    <p>I can't stop listening to the <a href="#">new album</a>.</p>
+                    <p>Who else is liking it?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
