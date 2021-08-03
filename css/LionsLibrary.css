@@ -1,0 +1,69 @@
+/* CSS reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fixed width container class that will "auto-center" itself */
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+/* Favorite BUTTON style from ButtonUp assignment */
+
+/* OVAL Button with SEARCH */
+In HTML
+<button class="search">Search</button>
+
+In CSS
+.search {
+    background: rgb(240, 238, 238);
+    color: rgb(24, 172, 157);
+    border: 2px solid rgb(24, 172, 157);
+    border-radius: 1em;
+    display: block;
+    padding: 6px;
+    width: 9em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* CIRCULAR Button with + sign */
+In HTML
+<button class="add">+</button>
+
+In CSS
+.add {
+    border-radius: 50%;
+    background: #59e6bb;
+    color: white;
+    display: block;
+    width: 40px;
+    font-size: 30px;
+    font-weight: 100;
+    border: none;
+}
+
+
+/* RECTANGULAR Button with Create Account */
+In HTML
+<button class="create">Create Account</button>
+
+In CSS
+.create {
+    background: #036cdd;
+    box-shadow: 5px 5px 5px black;
+    color: white;
+    display: block;
+    width: 11em;
+    font-weight: lighter;
+    font-size: 19px;
+    padding: 10px;
+    border-width: 3px;
+    border-color: rgba(0, 0, 0, 0.884);
+}
+
+
