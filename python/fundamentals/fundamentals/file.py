@@ -20,20 +20,20 @@ person['name'] = 'George' #replaces value for variable 'name' from 'John' to 'Ge
 person['eye_color'] = 'blue' #adds dictionary item 'eye_color' to dictionary list with value 'blue'
 print(fruit[2]) #prints item name at index 2 of tuple list fruit which is 'banana'
 
-if num1 > 45: 
-    print("It's greater") 
+if num1 > 45: #num = 42
+    print("It's greater") #false 
 else:
-    print("It's lower")
+    print("It's lower") #true. print "It's lower"
 """
 conditional (if, else), function
 """
 
-if len(string) < 5: 
-    print("It's a short word!")
-elif len(string) > 15: 
-    print("It's a long word!")
+if len(string) < 5: #string length of "Hello World" = 11
+    print("It's a short word!") #false
+elif len(string) > 15: #false
+    print("It's a long word!") #false
 else:
-    print("Just right!")
+    print("Just right!") #true. print "Just right!"
 """
 conditional (if, else if, else), length check
 """
@@ -46,7 +46,7 @@ for x in range(2,10,3):
     print(x) #2, 5, 8
 x = 0
 while(x < 5):
-    print(x)
+    print(x) #prints 0, 1, 2, 3, 4
     x += 1 #increment added +1
 """
 for loop, while loop 
@@ -80,7 +80,7 @@ print_hello_ten_times() #prints hello ten times
 defined function, for loop
 """
 
-def print_hello_x_times(x): #parameter x is inserted into defined function print_hello_x_times
+def print_hello_x_times(x): #parameter x is inserted into def (function) print_hello_x_times
     for num in range(x): #for loop initiated within range of given argument
         print('Hello') #prints hello
 
