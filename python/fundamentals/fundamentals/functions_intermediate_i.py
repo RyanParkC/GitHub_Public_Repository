@@ -106,12 +106,14 @@ iterateDictionary2('last_name',students) #Jordan, Rosales, Guillen, Tonel
 # Minh
 # Devon
 
+
 dict = {
     'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
     'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
 }
-def printInfo(dict):
-    for key in dict:  
-        print(str(len(dict[key])), key.upper())
-        for i in range (0, len(dict[key]), 1):
-            print(dict[key][i])
+def print_info(dict):
+    for key,val in dict.items(): #for keys, values in dictionary items ()
+        #.items returns a list of dictionary's (key,value) tuple pairs
+        print(f"{len(val)} {key.upper()}") #print length of values list + key name in UPPERCASE
+        for i in range(0, len(val), 1): #range incl index 0, excl index # length of values list, incr +1
+            print(val[i]) #prints values per index value [0,1,2,3,4,5,6,7,  8] loops back to print
