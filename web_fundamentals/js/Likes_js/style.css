@@ -1,0 +1,101 @@
+*{
+    margin:0px;
+    padding:0px;
+    font-family:arial;
+}
+
+.ALLcontainer{
+    margin:auto;
+    display:flex;
+    align-items:center;
+    flex-flow:row wrap;
+    width:600px;
+}
+
+.nav,.Title{
+    height:50px;
+    width:600px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+}
+
+.nav{
+    color:white;
+    background-color:black;
+    padding-left:15px;
+}
+
+.Title{
+    display:flex;
+    justify-content:center;
+}
+
+.LEFT_RIGHTcontainer{
+    display:flex;
+    justify-content:space-between;
+    width:595px;
+    height:450px;
+}
+
+.LEFTcontainer{
+    width:150px;
+}
+
+.box1{
+    width:145px;
+    border:3px solid black;
+    margin-left:0px;
+}
+
+.userimage{
+    width:70px;
+    height:70px;
+    display:flex;
+    justify-content:center;
+    margin:20px 40px;
+}
+
+.avatar,.james{
+    display:flex;
+    justify-content:center;
+    margin:20px 0;
+}
+
+.RIGHTcontainer{
+    display:flex;
+    flex-flow:column wrap;
+    width:420px;
+}
+
+.box2,.box3,.box4{
+    border:3px solid black;
+    width:387px;
+    height:100px;
+    margin-bottom:7px;
+    padding:15px;
+}
+
+.box2row1,.box3row1,.box4row1{
+    display:flex;
+    justify-content:space-between;
+}
+
+p{
+    margin:15px 0;
+}
+
+.Like{
+    width:50px;
+    height:25px;
+    font-size:15px;
+    background-color:rgb(241, 181, 50);
+    outline:0.5px solid black;
+    box-shadow:3px 3px 3px black;
+}
+
+.likes{
+    border:none;
+    background-color:white;
+    margin-right:25px;
+}
