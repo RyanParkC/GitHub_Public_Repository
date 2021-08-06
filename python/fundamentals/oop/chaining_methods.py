@@ -1,4 +1,4 @@
-#User
+#Chaining Methods
 
 class User:
     def __init__(self, name, email_address):
@@ -27,25 +27,13 @@ print(benjamin.name) # output: Ben Ja Min
 print(christina.name) # output: Chris Tina
 
 #3 deposits 1 withdrawal then display balance
-abraham.make_deposit(500)
-abraham.make_deposit(1000)
-abraham.make_withdrawal(300)
+abraham.make_deposit(500).make_deposit(1000).make_withdrawal(300)
 print(abraham.account_balance) # output: 1200
 
 #2 deposits 2 withdrawals then display balance
-benjamin.make_deposit(5000)
-benjamin.make_deposit(5000)
-benjamin.make_withdrawal(1500)
-benjamin.make_withdrawal(1000)
+benjamin.make_deposit(5000).make_deposit(5000).make_withdrawal(1500).make_withdrawal(1000)
 print(benjamin.account_balance) # output: 7500
 
 #1 deposit 3 withdrawals then display balance
-christina.make_deposit(10000)
-christina.make_withdrawal(250)
-christina.make_withdrawal(750)
-christina.make_withdrawal(1250)
+christina.make_deposit(10000).make_withdrawal(250).make_withdrawal(750).make_withdrawal(1250)
 print(christina.account_balance) #output: 7750
-
-#BONUS: add a transfer_money method
-#have the first user transfer money to the third user
-#then print both users' balances
