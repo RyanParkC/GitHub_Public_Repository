@@ -1,0 +1,7 @@
+.row {
+    display: flex;
+}
+.square {
+    width: 5rem;
+    height: 5rem;
+}
