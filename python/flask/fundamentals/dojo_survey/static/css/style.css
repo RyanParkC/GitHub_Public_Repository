@@ -1,0 +1,15 @@
+* {
+    margin:auto;
+    padding:10px;
+}
+.container {
+    border:3px solid black;
+    height:670px;
+    width:400px;
+}
+.form-label {
+    display:block;
+}
+.row {
+    display:flex;
+}
