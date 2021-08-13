@@ -1,0 +1,75 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema users
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema users
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `users` DEFAULT CHARACTER SET utf8 ;
+USE `users` ;
+
+-- -----------------------------------------------------
+-- Table `users`.`users`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `users`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `first_name` VARCHAR(255) NULL,
+  `last_name` VARCHAR(255) NULL,
+  `email` VARCHAR(255) NULL,
+  `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NULL,
+  PRIMARY KEY (`id`));
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+-- Queries Run -----------------------------------------
+
+-- Directly adding to table and applying
+INSERT INTO `users`.`users` (`id`, `first_name`, `last_name`, `email`, `created_at`, `updated_at`) 
+VALUES ('1', 'Abraham', 'Lincoln', 'abraham@lincoln.com', '2005-09-01 00:00:01', '2005-09-01 00:00:01');
+
+-- Inserting via code
+INSERT INTO users (id, first_name, last_name, email, created_at, updated_at) 
+VALUES ('2', 'Benjamin', 'Franklin', 'benjamin@franklin.com', '2005-09-01 00:00:01', '2005-09-01 00:00:01');
+
+INSERT INTO users (id, first_name, last_name, email, created_at, updated_at) 
+VALUES ('3', 'Charles', 'Darwin', 'charles@darwin.com', '2005-09-01 00:00:01', '2005-09-01 00:00:01');
+
+-- Retrieving all users
+SELECT *
+FROM users;
+
+-- Retrieving first user using email address
+SELECT *
+FROM users
+WHERE email = 'abraham@lincoln.com';
+
+-- Retrieving last user using id
+SELECT *
+FROM users
+WHERE id = 3;
+
+-- Change user with id = 3 so last name is Pancakes
+UPDATE users SET last_name = 'Pancakes' WHERE (id = 3);
+
+-- Delete user with id = 2
+DELETE FROM users WHERE id = 2;
+
+-- Retrieve all users, sorted by first_name
+SELECT *
+FROM users
+ORDER BY first_name;
+
+-- BONUS Query - Retrieve all users, sorted by first_name in descending order
+SELECT *
+FROM users
+ORDER BY first_name DESC;
