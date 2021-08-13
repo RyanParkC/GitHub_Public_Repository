@@ -66,9 +66,43 @@ VALUES ('4','1'),('4','2'),('4','3'),('4','4'),('4','5');
 SELECT author_id
 FROM favorites
 WHERE book_id = 3;
--- OR 
+-- OR -- to display more info
 SELECT authors.id, authors.name, books.title
 FROM authors
 JOIN favorites ON authors.id = favorites.author_id 
 JOIN books ON books.id = favorites.book_id 
-WHERE books.id = 3
+WHERE books.id = 3;
+
+-- Remove the 1st author of the 3rd book's favorites
+-- To see who that is
+SELECT *
+FROM favorites
+WHERE book_id = 3;
+-- Then to delete
+DELETE FROM favorites WHERE author_id = 2;
+
+-- Add the 5th author as an other who favorited the 2nd book
+INSERT INTO favorites (author_id, book_id) 
+VALUES ('5','2');
+
+-- Find all the books that the 3rd author favorited
+SELECT book_id
+FROM favorites
+WHERE author_id = 3;
+-- OR -- to display more info
+SELECT authors.id, authors.name, book_id, books.title
+from authors
+JOIN favorites ON authors.id = favorites.author_id
+JOIN books ON books.id = favorites.book_id
+WHERE author_id = 3;
+
+-- Find all the authors who favorited the 5th book
+SELECT author_id
+from favorites
+WHERE book_id = 5;
+-- OR -- to display more info
+SELECT authors.id, authors.name, book_id, books.title
+from authors
+JOIN favorites ON authors.id = favorites.author_id
+JOIN books ON books.id = favorites.book_id
+WHERE book_id = 5;
