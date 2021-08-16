@@ -1,0 +1,31 @@
+-- Produce as many PyMySQL errors as possible in twenty minutes. 
+-- Try using mistyped strings, an incorrect username, remove values, etc.
+-- Copy and paste those errors and explain how you got to that error.
+
+-- List of Errors
+
+1. pymysql.err.OperationalError: (1045, "Access denied for user 'groot'@'localhost' (using password: YES)")
+    user = 'groot', 
+    -- should be 'root'
+2. NameError: name 'root' is not defined
+    password = root 
+    -- should be in STRING format with ' ' or " "
+3. TypeError: 'bool' object is not iterable
+    if query.lower().find("insert") >= '0': 
+    -- should be in INT format as either just 0 or int(0) or even float(0.0)
+4. SyntaxError: invalid syntax
+    line 24
+    if query.lower().find("insert") >= 
+    -- missing value and proper syntax
+5. IndentationError: unindent does not match any outer indentation level
+    line 35
+    Exception as e:
+    -- needs to be properly indented alongside other data
+6. TypeError: 'bool' object is not callable
+    line 41, in query_db
+    self.connection.open()
+    -- change open back to close so that type is corrected
+7. AttributeError: 'str' object has no attribute 'connection'
+    line 18, in query_db
+    with self.connection.cursor() as cursor:
+    -- fix so that the str object has an attribute 'connection'
