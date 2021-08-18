@@ -12,22 +12,23 @@ class Friend:
 # Now we use class methods to query our database
     @classmethod
     def get_all(cls):
-        query = "SELECT * FROM friends;"
+        query = "SELECT * FROM friends;" # SELECTING ALL columns and rows from table 'friends'
         # make sure to call the connectToMySQL function with the schema you are targeting.
-        results = connectToMySQL('first_flask').query_db(query)
-        # Create an empty list to append our instances of friends
+        results = connectToMySQL('first_flask').query_db(query) # 'first_flask' = db/schema name)
+        # Create an empty list to append (add) our instances of friends
         friends = []
         # Iterate over the db results and create instances of friends with cls.
-        for friend in results:
-            friends.append( cls(friend) )
-        return friends
+        for friend in results: # for class 'friend' in database 'results'
+            friends.append( cls(friend) ) # add to list 'friends' using class 'friend' format
+        return friends # return value 'friends' to variable 'friends'
         # ... other class methods
-    # class method to save our friend to the database
+    # class method to save our friend to the database -- links to /create_friend from server.py
+    # INSERT INTO creates a row in the database
     @classmethod
-    def save(cls, data ):
+    def save(cls, data): # %(key_name)s - as placeholder for data dictionary
         query = "INSERT INTO friends ( first_name , last_name , occupation , created_at, updated_at ) VALUES ( %(fname)s , %(lname)s , %(occ)s , NOW() , NOW() );"
         # data is a dictionary that will be passed into the save method from server.py
-        return connectToMySQL('first_flask').query_db( query, data )
+        return connectToMySQL('first_flask').query_db( query, data ) #return values to be saved into the database
 
 
 # Note: We will need to call on the 
