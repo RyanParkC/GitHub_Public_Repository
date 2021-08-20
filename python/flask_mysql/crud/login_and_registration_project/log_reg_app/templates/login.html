@@ -14,15 +14,24 @@
 </head>
 <body>
     <div class="container">
+        <!-- Title 'Login'-->
         <h1 class="mb-4 mt-3">Login:</h1>
+        <!-- Form = used to collect user input-->
+        <!-- here, we commit action on URL '/users/login' using a 'POST' method (submitting data to server) with class set in 'column format'-->
+        <!-- sets a container for all the 'POST' method fields-->
         <form action="/users/login" method="post" class="col-sm-4">
+            <!-- 'Email' section-->
             <div class="mb-3">
+                <!-- Label for email on html page-->
                 <label for="email" class="form-label">Email:</label>
+                <!-- Input textbox for user input data-->
                 <input type="text" name="email" id="email" class="form-control">
             </div>
+            <!-- 'Password' section-->
             <div class="mb-3">
                 <label for="password" class="form-label">Password:</label>
                 <input type="password" name="password" id="password" class="form-control">
+                <!-- if any categories are TRUE then ERROR message is flashed-->
                 {% with messages = get_flashed_messages(with_categories=true) %}
                     {% if messages %}
                         {% for category, message in messages %}
@@ -35,11 +44,14 @@
                     {% endif %}
                 {% endwith %}
             </div>
+            <!-- 'Login' button section-->
             <div class="mb-3">
                 <input type="submit" value="Login" class="btn-primary p-2">
             </div>
         </form>
+        <!-- 'No account?' section-->
         <div class="row">
+            <!-- Hyperlink 'Register Here' button to URL '/' (index.html page)-->
             <p class="col h6">No account? <a class="link-primary"href="/">Register Here</a> </p>
             
         </div>

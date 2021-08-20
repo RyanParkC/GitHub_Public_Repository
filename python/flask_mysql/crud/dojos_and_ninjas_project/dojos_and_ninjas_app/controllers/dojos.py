@@ -7,8 +7,9 @@ from dojos_and_ninjas_app.models.dojo import Dojo
 # Display routes
 @app.route('/dojos')
 def dojos():
-    dojos = Dojo.get_all()
-    return render_template('dojos.html', dojos = dojos)
+    return render_template('dojos.html',dojos=Dojo.get_all())
+    # dojos = Dojo.get_all()
+    # return render_template('dojos.html', dojos = dojos)
 
 @app.route('/dojos/<int:dojo_id>')
 def dojo_info(dojo_id):
@@ -16,7 +17,7 @@ def dojo_info(dojo_id):
         "id": dojo_id
     }
     dojo = Dojo.get_dojo_with_ninjas(data)
-    return render_template("dojo_info.html", dojo = dojo)
+    return render_template("dojos_id.html", dojo = dojo)
 
 # Action routes
 @app.route('/dojos/create', methods=["POST"])

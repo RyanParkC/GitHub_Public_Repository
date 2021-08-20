@@ -10,7 +10,7 @@ class Dojo:
         self.id = data["id"]
         self.name = data["name"]
         self.created_at = data["created_at"]
-        self.updated_at = data["updated_at"]
+        self.updated = data["updated"]
         self.ninjas = []
 
 # Use classmethods to query our database
@@ -18,7 +18,7 @@ class Dojo:
 @classmethod
 def get_dojo_with_ninjas(cls, data):
     query = "SELECT * FROM dojos LEFT JOIN ninjas on ninjas.dojo_id = dojos.id WHERE dojos.id = %(id)s"
-    results = connectToMySQL("dojo_ninjas").query_db(query,data)
+    results = connectToMySQL(DATABASE).query_db(query,data)
     dojo = cls(results[0])
     for result in results:
         print(result)

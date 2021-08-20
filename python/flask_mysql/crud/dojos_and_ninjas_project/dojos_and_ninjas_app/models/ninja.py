@@ -1,7 +1,7 @@
 from dojos_and_ninjas_app.config.mysqlconnection import connectToMySQL
 
 # List database
-DATABASE = "dojo_ninjas"
+DATABASE = "dojos_and_ninjas"
 
 # Model the class after the friend table from our database
 class Ninja:
