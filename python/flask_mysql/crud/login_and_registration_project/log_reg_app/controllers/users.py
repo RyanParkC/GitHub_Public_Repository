@@ -12,7 +12,7 @@ from flask import render_template, request, redirect, session, flash
 # Display route
 @app.route('/') # URL
 def index(): # any function name
-    return render_template("index.html") # linked HTML page to display at given URL
+    return render_template("index.html") # linked HTML page to display at given
 
 # User Success Menu Page
 @app.route('/users/success') # URL route = /users/success

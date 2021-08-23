@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>User Login and Registration</title>
+</head>
+<body>
+<!-- For Index URL '/'-->
+    <div class="container mt-4"> <!-- margin-top = 4-->
+        <div class="row">
+            <!-- 'Register' container-------------------------------------------------------------------------------------------------------------------->
+            <div class="col col-sm-7"> <!-- col-sm-8 = controls size of input box-->
+                <!-- Title 'User Registration'-->
+                <h1>Register</h1>
+                <!-- Form = used to collect user input-->
+                <!-- here, we commit action on '/users/register' using a 'POST' method (submitting data to server) with class set in 'column format'-->
+                <!-- sets a container for all the 'POST' method fields-->
+                <form action="/users/register" method="post" class="col-sm-4">
+                    <!-- 'First Name' section-->
+                    <div class="mb-3"> <!-- margin-bottom = 3-->
+                        <!-- setting a label to show for 'First Name'-->
+                        <label for="first_name" class="form-label">First Name:</label>
+                        <!-- placing an 'input' box (type = 'text' box) to collect user input data-->
+                        <input type="text" name="first_name" id="first_name" class="form-control">
+                        <!-- note these are all set methods stored/used by Jinja, not new variables-->
+                        <!-- if any categories are TRUE, then ERROR message is flashed-->
+                        {% with messages = get_flashed_messages(with_categories=true) %} <!-- declaring variable called messages-->
+                            {% if messages %}                                            <!-- checking if there are any messages-->
+                                {% for category, message in messages %}                  <!-- loop through the messages-->
+                                    {% if category == 'first_name'%}                     
+                                        <div class="error">                              <!-- labeling class as 'error' to potentially adjust message display-->
+                                            <p>{{message}}</p>                           <!-- display each message in a paragraph tag-->
+                                        </div>
+                                    {% endif %}
+                                {% endfor %} <!-- end For loop-->
+                            {% endif %} <!-- end IF statement-->
+                        {% endwith %} <!-- end WITH statement-->
+                    </div>
+                    <!-- 'Last Name' section-->
+                    <div class="mb-3">
+                        <label for="last_name" class="form-label">Last Name:</label>
+                        <input type="text" name="last_name" id="last_name" class="form-control">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    {% if category == 'last_name'%}
+                                        <div class="error">
+                                            <p>{{message}}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <!-- 'Email' section-->
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email:</label>
+                        <input type="text" name="email" id="email" class="form-control">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    {% if category == 'email'%}
+                                        <div class="error">
+                                            <p>{{message}}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <!-- 'Password' section-->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    {% if category == 'password'%}
+                                        <div class="error">
+                                            <p>{{message}}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <!-- 'Confirm Password' section-->
+                    <div class="mb-3">
+                        <label for="confirm_password" class="form-label">Confirm Password:</label>
+                        <input type="password" name="confirm_password" id="confirm_password" class="form-control">
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    {% if category == 'password'%}
+                                        <div class="error">
+                                            <p>{{message}}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <!-- 'Register' button-->
+                    <div class="mb-3">
+                        <!-- Input box with 'submit' type to submit user input data-->
+                        <!-- here, whatever you type in the 'value' section will show as text on html page-->
+                        <input type="submit" value="Register" class="btn-primary p-2"> <!-- 'Register' will show on html page-->
+                    </div>
+                </form>
+            </div>
+            <!-- 'Login' container--------------------------------------------------------------------------------------------------->
+            <div class="col">
+                <!-- Title 'Login'-->
+                <h1>Login:</h1>
+                <!-- Form = used to collect user input-->
+                <!-- here, we commit action on URL '/users/login' using a 'POST' method (submitting data to server) with class set in 'column format'-->
+                <!-- sets a container for all the 'POST' method fields-->
+                <form action="/users/login" method="post" class="col-sm-4">
+                    <!-- 'Email' section-->
+                    <div class="mb-3">
+                        <!-- Label for email on html page-->
+                        <label for="email" class="form-label">Email:</label>
+                        <!-- Input textbox for user input data-->
+                        <input type="text" name="email" id="email" class="form-control">
+                    </div>
+                    <!-- 'Password' section-->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password:</label>
+                        <input type="password" name="password" id="password" class="form-control">
+                        <!-- if any categories are TRUE then ERROR message is flashed-->
+                        {% with messages = get_flashed_messages(with_categories=true) %}
+                            {% if messages %}
+                                {% for category, message in messages %}
+                                    {% if category == 'error'%}
+                                        <div class="error">
+                                            <p>{{message}}</p>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
+                    <!-- 'Login' button section-->
+                    <div class="mb-3">
+                        <input type="submit" value="Login" class="btn-primary p-2">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
