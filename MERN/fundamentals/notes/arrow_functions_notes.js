@@ -99,3 +99,22 @@
         }
         /* Arrow functions don't create their own context, they look to their enclosing scope for that information. 
         Therefore, 'this' should now refer to the 'Deck' instance, which has a 'createCard' method */
+
+
+// Other examples of how to convert to arrow function:
+// 1. 
+    document.getElementById("button").onclick = function() {
+        setBackgroundColorById("paragraph", "blue");
+    }
+    // Converts to:
+        document.getElementById("button").onclick = () => {
+            setBackgroundColorById("paragraph", "blue");
+        }
+// 2.
+    function getValueFromId(id) {
+        return document.getElementById(id).value;
+    }
+    // Converts to:
+        const getValueFromId = (id) => {
+            return document.getElementById(id).value;
+        }
