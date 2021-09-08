@@ -1,0 +1,10 @@
+.advertisement {
+    display:grid;
+    color: black;
+    border: 2px solid black;
+    grid-row: 2/2;
+    grid-column: 1/4;
+    background:#b4a7d6;
+    height:70px;
+
+}

@@ -1,0 +1,8 @@
+.subGrid {
+    display:grid;
+    background: #ffd966;
+    border: 2px solid black;
+    grid-row: 1 / 2;
+    grid-auto-columns: auto;
+    height:240px;
+}
