@@ -1,10 +1,12 @@
-import logo from './logo.svg';
+/* App.js - Functions and INPUTS */
+
 import './App.css';
 import React from 'react';
 import PersonCardComponent from './components/PersonCardComponent';
 
-function App() {
-  return (
+function App() {              // Functional component
+  return (                    // We render the component like so: 
+                              // can pass down strings with or without curly braces {}
     <div className="App">
       <PersonCardComponent firstName={"Jane"} lastName={"Doe"} age={45} hairColor={"Black"}/>
       <PersonCardComponent firstName={"John"} lastName={"Smith"} age={88} hairColor={"Brown"}/>

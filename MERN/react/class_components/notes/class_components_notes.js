@@ -429,7 +429,7 @@ https://reactjs.org/docs/react-component.html#setstate
         
     export default MyButton;
 
-/* 3. CSS Modules ----------------------------------------------------------------------------
+/* 3. CSS Modules **** BEST SOLUTION *******************************************************************
         Pros(+): Overcomes problems of first two approaches (Direct Import, Inline Styles)
                     a.  Create-react-app supports CSS Modules by default.
                         Thus, we do NOT need to make any special adjustments to use them. 
@@ -471,6 +471,240 @@ https://reactjs.org/docs/react-component.html#setstate
     export default MyButton;
 
 
+/* CSS in JS (Optional) Notes ------------------------------------------------------------------------ */
+
+/* CSS Modules:
+    Pros(+): provide an excellent way to isolate our styles by Component.
+    Cons(-): 1. Unable to dynamically specify style properties depennding on certain conditions.
+                Limited to the styles we define in it.
+                We could use Inline styles to accomplish more dynamic styling, but at the cost of
+                sacrificing media queries and pseudo-classes. */
+
+/* Styled Components -----------------------------------------------------------------------------------
+    
+    Styled Components = is a so-called CSS in JS Library, meaning we actually define our styles using JS
+
+    To use Styled Components, run the folowing in the Terminal: */
+        npm install styled-components
+
+    // src/components/StyledBox.js
+        import React from 'react';
+        import styled from 'styled-components';             // import 'styled' from 'styled-components'
+        
+        const StyledBox = styled.div`                       // component called 'StyledBox'
+            border: 1px solid lightgray;
+            background: ${props => props.bgColor};          // props
+            width: ${props => props.width || '100px'};      // props
+            height: ${props => props.height || '100px'};    // props
+        `;
+        
+        export default StyledBox;
+    
+    // src/components/SomeOtherComponent.js
+        import React from 'react';
+        
+        import StyledBox from './StyledBox';                // import component 'StyledBox'
+        
+        const SomeOtherComponent = () => (
+            <div>
+                <StyledBox bgColor="blue"/>                 // use 'StyledBox' as a stylized div wrapper
+                <StyledBox bgColor="red" height="200px"/>
+            </div>
+        )
+        
+        export default SomeOtherComponent;
+
+/* Styletron --------------------------------------------------------------------------------------------
+
+    Styletron = fairly similar to Styled Components, but with some important differences:
+        Differences vs. Styled Components:
+            1. Uses Object Syntax instead of using Template Literals, similar to Inline styline w/ React
+    
+    To Use Styletron run in Terminal: */
+        npm install styletron-react
+    
+    /* You also need to WRAP your application (or whatever part will be using Styletron) with its
+        Provider component and install a 2nd package 'styletron-engine-atomic' to create the engine. */
+    
+    // src/App.js
+    import React from 'react';
+    
+    import { Provider } from 'styletron-react';                     // import 'Provider'
+        
+    import { Client as Styletron } from 'styletron-engine-atomic';  // import 'Client'
+        
+    const engine = new Styletron();                                 // component called 'engine'
+        
+    function App() {
+        return (
+            <Provider value={ engine }>
+                { /* your other components go in here */ }
+            </Provider>
+        )
+    }
+        
+    export default App;
+
+    // src/components/StyledBox.js
+        /* Here, we create a StyledBox component by invoking the styled function with 'div' as
+            the first (1st) argument, and a callback function as the second (2nd). 
+            
+            Our callback function takes the 'props' object and returns a 'styling' object with 
+            key/value pairs that must be specified with camelCasing (remember, JS does not support
+            hyphens(-) as object keys).
+            
+            Finally, here we have created a dynamic media query which will change based on whether a
+            minWidth prop is provided. */
+        import React from 'react'; 
+        import { styled } from 'styletron-react';     // import 'styled' function from 'styletron'
+            
+        const StyledBox = styled('div', props => ({   // component 'StyledBox'. invoke 'styled' fxn. props = callback fxn
+            border: '1px solid lightgray',
+            background: props.$bgColor,               // props
+            width: props.$width || '100px',           // props
+            height: props.$height || '100px',         // props
+            
+            display: 'none',
+            
+            ['@media and (min-width: ' + (props.$minWidth || '500px') + ')']: {    // media queries
+                display: 'block'
+            }
+        }));
+            
+        export default StyledBox;
+    
+    // src/components/SomeOtherComponent.js
+        /* Note: For these 'styling-specific' props to work as expected, 
+                    they must be preceded with the dollar ($) sign,
+                    both in the components themselves and in the calling code. */
+        import React from 'react';
+
+        import StyledBox from './StyledBox';
+        
+        const SomeOtherComponent = () => (
+            <div>
+                <StyledBox $bgColor="blue"/>
+                <StyledBox $bgColor="red" $height="200px" $minWidth="1200"/>
+            </div>
+        )
+        
+        export default SomeOtherComponent;
+
+// Additional Resources:
+https://www.styletron.org/react#props-filtering
+https://styled-components.com/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+https://github.com/styletron/styletron
+https://emotion.sh/docs/introduction
 
 
+/* useRef Notes --------------------------------------------------------------------------------------- */
 
+/* React gives us a developer-friendly way to declaratively describe our UI (user interface);
+    that is, we can simply lay our JSX and let React worry about the implementation details of turning
+    it into actual HTML.
+
+    Under the hood, React uses something called a 'Virtual DOM', and through a process of comparing
+    this Virtual DOM to the actual DOM (Document Object Model), 
+    also known as "diffing", it makes decisions as to when to re-render certain parts of our apps.
+
+        "diffing" = the process of comparing the Virtual DOM to the actual DOM.
+                using this process, it makes decisions as to when to re-render certain parts of our apps.
+    
+    Sometimes, we may need to imperatively control how a user's browser interacts with our UI.
+        For this, React provides a "ref" attribute that we can give elements in order to hold on to a
+        reference to that specific DOM node (element).
+    
+    We also have access to a 'hook' (more on these later) called 'useRef'.
+        "useRef" = allows us to create a reference inside our component. */
+            
+    // e.g. create a Button which, when clicked, causes the browser to focus a specific input.
+        import React, { useRef } from 'react';
+
+        export default () => {
+            const input = useRef();
+        
+            function focusInput() {
+                input.current.focus();
+            }
+        
+            return (
+                <>
+                    <input ref={input}/>
+                    <button onClick={focusInput}>Focus Me!</button>
+                </>
+            );
+        }
+
+/* Note: You have to access the ref's current property to get its actual value (DOM element in this case).
+        There are other scenarios in which you might need a reference to a DOM element.
+            e.g. consider a graphical application in which you need to create a canvas element.
+        
+        It is important to obtain a reference to the canvas itself in order to draw certain objects on it. */
+    
+    // e.g.
+        /* Note the use of "useState" here, which is another built-in hook (we'll cover it more later).
+        
+        You might also need to obtain a reference to a DOM node if you're integrating with an outside
+        library that needs to control a specific piece of the DOM. 
+        
+        Finally, the "useRef" hook can be used to hold onto a value which would otherwise become "stale"
+        when accessed from another hook. 
+        --- Don't worry too much about this use case;
+            just know that if you're accessing a stateful value and it's giving you an old value,
+            you may want to look into useRef to create a mutable (changeable) object as a workaround. */
+            import React, { useRef, useState } from 'react';    // import "useRef" and "useState"
+
+            export default () => {
+                const canvas = useRef();
+                const [xVal, setXVal] = useState(0);
+                const [yVal, setYVal] = useState(0);
+                const [color, setColor] = useState('black');
+            
+                function drawSquare(color, x, y) {
+                    const ctx = canvas.current.getContext('2d');
+            
+                    ctx.fillStyle = color;
+                    ctx.fillRect(x, y, 100, 100);
+                }
+            
+                return (
+                    <>
+                        <canvas ref={canvas} height="400" width="400"/>
+                        <div>
+                            <label>X Coordinate</label>
+                            <input
+                                type="number"
+                                min="0"
+                                max="200"
+                                onChange={e => setXVal(+e.target.value)}
+                                value={xVal}
+                            />
+                        </div>
+                        <div>
+                            <label>Y Coordinate</label>
+                            <input
+                                type="number"
+                                min="0"
+                                max="200"
+                                onChange={e => setYVal(+e.target.value)}
+                                value={yVal}
+                            />
+                        </div>
+                        <select
+                            onChange={e => setColor(e.target.value)}
+                            value={color}
+                        >
+                            <option value="black">black</option>
+                            <option value="blue">blue</option>
+                            <option value="red">red</option>
+                        </select>
+                        <div>
+                            <button onClick={() => drawSquare(color, xVal, yVal)}>Draw!</button>
+                        </div>
+                    </>
+                );
+            }
+
+// Additional Resources:
+https://reactjs.org/docs/reconciliation.html
