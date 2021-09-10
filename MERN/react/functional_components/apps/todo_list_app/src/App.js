@@ -53,9 +53,6 @@ function App() {
 
   return (
     <div style={{ textAlign: "center" }}>
-      {
-        [<h1>hello1</h1>, <h2>world1</h2>]
-      }
       <form 
         onSubmit={(event) => {
           handleNewTodoSubmit(event);
@@ -102,11 +99,6 @@ function App() {
           </div>
         );
       })}
-
-      {
-        [<h1>hello2</h1>, <h2>world2</h2>]
-      }
-
     </div>
   );
 }
