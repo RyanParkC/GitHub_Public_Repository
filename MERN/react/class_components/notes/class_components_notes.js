@@ -688,7 +688,7 @@ https://emotion.sh/docs/introduction
                                 min="0"
                                 max="200"
                                 onChange={e => setYVal(+e.target.value)}
-                                value={yVal}
+                                vzalue={yVal}
                             />
                         </div>
                         <select
