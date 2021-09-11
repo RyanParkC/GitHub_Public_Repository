@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // using Class Component ------------------------------------------------------------------------
 
 // Format #1 (Class Component) --------------------------------------------------
-class PersonCardComponent extends React.Component {
+class PersonCardComponent extends Component {
     render() {
         return (
             <div>
