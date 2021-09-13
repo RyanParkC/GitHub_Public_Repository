@@ -16,22 +16,22 @@ const UserForm = (props) => {
 
     const validateFirstname = (e) => {
         setFirstname(e.target.value)
-
         if (e.target.value.length < 2) {
             setFirstnameError('username must be at least 2 characters')
         } else {
             setFirstnameError('')
         }
     }
+
     const validateLastname = (e) => {
         setLastname(e.target.value)
-
         if (e.target.value.length < 2) {
             setLastnameError('username must be at least 2 characters')
         } else {
             setLastnameError('')
         }
     }
+
     const validateEmail = (e) => {
         setEmail(e.target.value)
         if (e.target.value.length < 5) {
@@ -41,6 +41,7 @@ const UserForm = (props) => {
         }
             
     }
+
     const validatePassword = (e) => {
         setPassword(e.target.value)
         if (e.target.value.length < 8) {
@@ -51,6 +52,7 @@ const UserForm = (props) => {
         }
         
     }
+
     const validateConfirmpw = (e) => {
         console.log(password);
         setConfirmpw(e.target.value)
@@ -61,6 +63,7 @@ const UserForm = (props) => {
             setConfirmpwError('')
         }
     }
+
     const createUser = (e) => {
         e.preventDefault()
         if(firstname.length < 1) {
@@ -79,11 +82,14 @@ const UserForm = (props) => {
         setConfirmpw('')
     }
 
+
+
     return (
         <div className="row">
             <form className="row" onSubmit={ createUser }>
                 {
-                    isSubmitted?
+                    // Ternary operator (?) -- condition ? expressionIfTrue : expressionIfFalse
+                    isSubmitted?    
                     <h3 className="h3">Thank You For Submitting The Form</h3> :
                     <h3 className="h3">Please Submit The Form</h3>
                 }

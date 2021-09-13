@@ -1,5 +1,5 @@
 {
-  "name": "more_forms_app",
+  "name": "form_validation_app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,9 +7,11 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "bootcamp": "^1.1.7",
+    "bootstrap": "^5.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
+    "react-validation": "^3.0.7",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

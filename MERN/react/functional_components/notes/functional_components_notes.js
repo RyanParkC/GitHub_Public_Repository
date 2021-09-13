@@ -153,7 +153,65 @@
         export default Counter;
 
 /* Forms Notes ------------------------------------------------------------------------------------------
-
+    Forms = allow us to have a conversation with our users.
+        Two (2) ways to deal with forms in React:
+            1. state = Track input values as a piece of your state, updating them on change events
+                        and rendering them back out to the UI.
+                        These are called 'Controlled components'.
+            2. refs = Attach a pointer to DOM nodes like inputs and textareas and reach out to inspect
+                        their values once our form is submitted. We call these 'Uncontrolled components'.
+        We'll favor the 'Controlled component' strategy because it allows React to continue to sit
+        between us and the actual DOM.
+    
+    e.g. UserForm.jsx */
+    import React, { useState } from  'react';
+    
+    
+    const UserForm = (props) => {
+        const [username, setUsername] = useState("");
+        const [email, setEmail] = useState("");
+        const [password, setPassword] = useState("");  
+        
+        const createUser = (e) => {
+            e.preventDefault();
+            const newUser = { username, email, password };
+            console.log("Welcome", newUser);
+        };
+        
+        return(
+            /* onSubmit = event runs when user submits form by clicking on submit button.
+                Needs to accept a parameter (e) that is full of event info.
+                Here, we want to prevent the default form behavior using 'e.preventDefault()'.
+                The default behavior is submitting the info to the route in the 'action' which
+                causes a page load. We want to handle this info ourselves. 
+                
+                createUser = when onSubmit event occurs, we have written a function that handles 
+                what to do with the form data. */
+            <form onSubmit={ createUser }>
+                <div>
+                    <label>Username: </label> 
+                    {/* onChange = this event is run whenever the value in the input is changed
+                        When we use it we need to accept a parameter (e) into our function.
+                        'e' variable contains all sorts of nifty event info,
+                        where 'e.target' is the 'target' of the event, in other words the <input />
+                        element, and 'e.target.value' is the info currently typed into the input. */}
+                    <input type="text" onChange={ (e) => setUsername(e.target.value) } />
+                </div>
+                <div>
+                    <label>Email Address: </label> 
+                    <input type="text" onChange={ (e) => setEmail(e.target.value) } />
+                </div>
+                <div>
+                    <label>Password: </label>
+                    <input type="text" onChange={ (e) => setPassword(e.target.value) } />
+                </div>
+                <input type="submit" value="Create User" />
+            </form>
+        );
+    };
+        
+    export default UserForm;
+    
 
 
 
