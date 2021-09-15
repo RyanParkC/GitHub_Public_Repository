@@ -20,11 +20,11 @@ const Planets = (props) => {
         <div style={{ color:'blue' }}>
             <h1 className="mt-5 mb-3 mx-2">Planet:</h1>
             <div className="details ms-5">
-                <h2 className="my-3">{result.name}</h2>
-                <h5>Climate: {result.climate}</h5>
-                <h5>Terrain: {result.terrain}</h5>
-                <h5>Surface Water: {result.surface_water}</h5>
-                <h5>Population: {result.population}</h5>
+                <h2 className="my-3">{ result.name }</h2>
+                <h5>Climate: { result.climate }</h5>
+                <h5>Terrain: { result.terrain }</h5>
+                <h5>Surface Water: { result.surface_water }</h5>
+                <h5>Population: { result.population }</h5>
             </div>
         </div>
     )

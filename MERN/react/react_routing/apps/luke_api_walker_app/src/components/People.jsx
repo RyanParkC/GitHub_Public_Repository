@@ -23,7 +23,7 @@ const People = (props) => {
             e.preventDefault()
             console.log(homeWorld.length);
             let pid = homeWorld.url.slice(30);
-            history.push(`/planets/${pid}`)
+            history.push(`/planets/${ pid }`)
             history.goForward()
         }
 
