@@ -1,0 +1,10 @@
+// Import mongoose
+const mongoose = require("mongoose");
+
+// Here, we use mongoose to connect to MongoDB
+mongoose.connect("mongodb://localhost/name_of_your_DB", {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+})
+	.then(() => console.log("Established a connection to the database"))
+	.catch(err => console.log("Something went wrong when connecting to the database", err));
