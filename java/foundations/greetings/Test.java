@@ -1,3 +1,4 @@
+package java.foundations.greetings;
 // Java Fundamentals
 
 // File name must be the same as the class name (must be written in PascalCase)

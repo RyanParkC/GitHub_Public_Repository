@@ -1,3 +1,4 @@
+package java.foundations.first_java_program;
 // First Java Program
 
 public class Name {
