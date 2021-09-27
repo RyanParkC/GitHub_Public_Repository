@@ -1,3 +1,4 @@
+package myjava.fundamentals.cafe_java;
 // CafeJava 
 
 public class CafeJava {
