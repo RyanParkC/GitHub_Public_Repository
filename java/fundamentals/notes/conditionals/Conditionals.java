@@ -1,4 +1,4 @@
-package java.fundamentals.javafun.conditionals;
+package java.fundamentals.notes.conditionals;
 // Conditionals
 
     // If

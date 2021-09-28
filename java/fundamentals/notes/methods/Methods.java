@@ -1,4 +1,4 @@
-package java.fundamentals.javafun.methods;
+package java.fundamentals.notes.methods;
 
 
 public class Methods {

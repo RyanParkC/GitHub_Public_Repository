@@ -1,4 +1,4 @@
-package java.fundamentals.javafun.strings;
+package java.fundamentals.notes.strings;
 
 public class Strings {
     public static void main(String[] args) {
