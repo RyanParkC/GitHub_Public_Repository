@@ -61,4 +61,20 @@ public class CafeJava {
         
         // 5. Try changing the price values for each drink and isReady flags (booleans), to test if all of your logic works,
             // even when prices and statuses are changed.
-}
+
+        // Extra
+            System.out.println("The price of Mocha is : " + mochaPrice);
+
+            if ( isReadyOrder1 ) {
+                System.out.println( customer1 + readyMessage );
+            } else {
+                System.out.println( customer1 + pendingMessage );
+            }
+
+            if ( isReadyOrder3 ) {
+                System.out.println( customer3 + readyMessage );
+            } else {
+                System.out.println( customer3 + pendingMessage );
+            }
+    }
+};

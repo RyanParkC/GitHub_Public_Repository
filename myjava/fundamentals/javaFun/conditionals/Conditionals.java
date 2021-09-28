@@ -1,4 +1,4 @@
-package myjava.fundamentals.javaFun;
+package myjava.fundamentals.javafun.conditionals;
 // Conditionals
 
     // If
@@ -6,6 +6,9 @@ package myjava.fundamentals.javaFun;
     // If-Else-If-Else
 
 public class Conditionals {
+
+    public static void main(String[] args) {
+
     boolean defenderIsGuarding = true;
     int distanceToBasket = 15;
         
@@ -16,9 +19,8 @@ public class Conditionals {
     } else {                                        // else
         System.out.println("Dribble The Ball");
     }
-};
 
-// When to use == and when to use .equals()
+    // When to use == and when to use .equals()
     // We use "==" when we compare if both variables point to the SAME object in memory
 
     // == 
@@ -28,6 +30,10 @@ public class Conditionals {
 
     // .equals()
     // To check if two variables have the SAME value, we just need to use .equals() instead
-    String a = new String( "Dojo" );
-    System.out.println( a.equals("Dojo") );
+    String b = new String( "Dojo" );
+    System.out.println( b.equals("Dojo") );
     // this actually will print out `true`
+
+    }
+};
+
