@@ -1,4 +1,4 @@
-package java.fundamentals.notes.methods;
+package myjava.fundamentals.notes.methods;
 
 
 public class Methods {

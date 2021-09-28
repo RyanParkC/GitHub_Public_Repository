@@ -1,4 +1,4 @@
-package java.fundamentals.notes.conditionals;
+package myjava.fundamentals.notes.conditionals;
 // Conditionals
 
     // If

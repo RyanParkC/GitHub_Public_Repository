@@ -1,4 +1,4 @@
-package java.fundamentals.notes.modularize;
+package myjava.fundamentals.notes.modularize;
 
 public class ImportDemoTest {
     public static void main(String[] args) {

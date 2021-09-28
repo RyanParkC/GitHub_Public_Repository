@@ -1,4 +1,4 @@
-package java.fundamentals.alfred_bot;
+package myjava.fundamentals.alfred_bot;
 
 import java.util.Date;
 

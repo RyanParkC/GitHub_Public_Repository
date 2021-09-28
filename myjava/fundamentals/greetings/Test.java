@@ -1,5 +1,5 @@
 // Java Fundamentals
-package java.fundamentals.greetings;
+package myjava.fundamentals.greetings;
 
 // File name must be the same as the class name (must be written in PascalCase)
     // File name = class Name

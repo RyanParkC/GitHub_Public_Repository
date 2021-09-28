@@ -1,4 +1,4 @@
-package java.fundamentals.notes.variables;
+package myjava.fundamentals.notes.variables;
 // Variables
 
     // Declare a variable using:

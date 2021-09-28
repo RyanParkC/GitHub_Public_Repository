@@ -1,4 +1,4 @@
-package java.fundamentals.notes.type_casting;
+package myjava.fundamentals.notes.type_casting;
 
 // Type	    Size	    Range
 // byte    	1 byte	    -128 to 127

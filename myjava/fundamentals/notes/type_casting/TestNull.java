@@ -1,4 +1,4 @@
-package java.fundamentals.notes.type_casting;
+package myjava.fundamentals.notes.type_casting;
 
 // 2. Null values - 
 //      Primitive data types (e.g. int, byte, short, long, float, double, boolean, char) can only hold data. 

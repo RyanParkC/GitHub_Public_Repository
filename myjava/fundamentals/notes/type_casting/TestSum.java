@@ -1,4 +1,4 @@
-package java.fundamentals.notes.type_casting;
+package myjava.fundamentals.notes.type_casting;
 
 // Primitive vs Object types
 

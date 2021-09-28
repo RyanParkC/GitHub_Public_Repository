@@ -1,4 +1,4 @@
-package java.fundamentals.first_java_program;
+package myjava.fundamentals.first_java_program;
 // First Java Program
 
 public class Name {
