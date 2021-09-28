@@ -59,3 +59,8 @@ public class Arrays {
     // System.out.println(list); // [10, "Hello", [], 12.0]
 
 }
+
+// Most used methods for ArrayList class are:
+//      add, clear, clone, contains, get, indexOf, isEmpty, remove, size
+
+// Note: The <> are informally referred to as the "diamond."
