@@ -1,4 +1,4 @@
-package myjava.fundamentals.javafun.variables;
+package java.fundamentals.javafun.variables;
 // Variables
 
     // Declare a variable using:

@@ -1,4 +1,4 @@
-package myjava.fundamentals.alfred_bot;
+package java.fundamentals.alfred_bot;
 
 public class AlfredTest {
     /*

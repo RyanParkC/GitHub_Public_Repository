@@ -1,4 +1,4 @@
-package myjava.fundamentals.javafun.modularize;
+package java.fundamentals.javafun.modularize;
 
 
 // importing the Date class

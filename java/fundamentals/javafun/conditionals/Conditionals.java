@@ -1,4 +1,4 @@
-package myjava.fundamentals.javafun.conditionals;
+package java.fundamentals.javafun.conditionals;
 // Conditionals
 
     // If

@@ -1,4 +1,4 @@
-package myjava.fundamentals.javafun.methods;
+package java.fundamentals.javafun.methods;
 
 
 public class Methods {
