@@ -1,0 +1,53 @@
+Object Oriented Programming (OOP) -
+
+Object = a collection of behaviors and properties that all revolve around the same concept
+            -       this collection of behaviors and properties are called "instance members"
+
+            - Objects were originally used to model real-world objects or situations,
+            - but can and are used for ALL sorts of applications.
+
+            - They are reusable and are created from blueprints known as "classes".
+            e.g. Class > Object
+
+            e.g. class = Solar System
+
+                    object_1 = Stars
+                        <fields>
+                            attribute_1a = 
+                            attribute_2a = 
+                        <methods>
+                            method_1a()  {
+                                // code method here
+                            }
+
+                    object_2 = Planets
+                        <field>
+                            attribute_1b = mass
+                            attribute_2b = rotationSpeed
+                            attribute_3b = currentPosition
+                        <methods>
+                            determineNewPosition() {
+                                // code method here
+                            }
+
+                    object_3 = Moons
+                        <field>
+                            attribute_1c = 
+                            attribute_2c = 
+
+                    object_4 = Asteroids
+                        <field>
+                            attribute_1d =
+                            attribute_2d = 
+
+Classes = blueprints that can be used to create and customize lots of objects of a particular type
+            - Should be named with a noun (e.g. instead of a "HelloWorld" class, you may have it be a "Greeter" class)
+            - PascalCase format:
+                class ClassName { }
+
+            - In Java, you can have:
+                - multiple classes in the same field
+                - but only ONE class that is public
+                    - this class needs to be named identically to the file's name and should be named using a noun
+                        e.g. file name = Greeter.Java
+                                public class name = Greeter { // code here... }
