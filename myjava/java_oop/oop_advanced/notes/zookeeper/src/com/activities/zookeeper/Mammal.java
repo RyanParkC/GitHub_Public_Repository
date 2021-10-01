@@ -9,7 +9,7 @@ public class Mammal {
     // Set starting value for class Mammal
     public Mammal() {
         this.energyLevel = 10;
-    }
+    } 
 
     // Get
     public int getEnergyLevel() {

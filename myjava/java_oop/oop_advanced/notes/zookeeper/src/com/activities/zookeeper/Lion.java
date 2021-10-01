@@ -23,7 +23,7 @@ public class Lion extends Mammal {
 		this.setEnergyLevel(this.getEnergyLevel() - 10);
 		this.setEnergyLevel(this.getEnergyLevel() + 20);
 		System.out.println("Energy level : " + this.getEnergyLevel());
-	}
+	} 
 	
 	public void nap() {
 		System.out.println(name + " curls up on the ground. It's nap time... but beware, he is a light sleeper. Gains 15 energy!");

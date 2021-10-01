@@ -24,7 +24,7 @@ public class Gorilla extends Mammal {
     }
     
     // eatBananas()
-    public void eatBananas(){
+    public void eatBananas(){ 
     	// Print
         System.out.println(name + " starts to peel back and eat bananas. He looks very pleased. Gains 10 energy!");
         // Increase(+) Energy Level

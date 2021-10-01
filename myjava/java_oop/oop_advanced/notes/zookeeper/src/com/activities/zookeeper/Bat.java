@@ -3,7 +3,7 @@ package com.activities.zookeeper;
 // Bat subclass inherits all members from Mammal superclass
 public class Bat extends Mammal{
 	// Set Energy Level
-    public Bat(){this.setEnergyLevel(300);}
+    public Bat(){this.setEnergyLevel(300);} 
 
     // Fly
     public void fly() {
