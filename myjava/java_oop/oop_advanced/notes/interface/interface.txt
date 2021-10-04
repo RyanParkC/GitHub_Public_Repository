@@ -1,0 +1,57 @@
+Interfaces -
+    - arise out of the need for several Objects to be able to interact with something in the same way.
+    - e.g. if we have both a Cat and a Dog
+        <> class Cat vs class Dog
+            - if both housePets:
+                methods:
+                -> giveOwnerAffection()
+                -> sleepInside()
+            - to do this, they need to implement this code differently, as they will not be doing the same things.
+            - we must create an "interface" for each class to implement
+        <> HousePet interface
+            - anything conforming to this interface will have the following methods from it:
+                methods:
+                -> giveOwnerAffection()
+                -> sleepInside()
+            - if anything in the future wants to become a HousePet, 
+                we just implement it in the class to make sure that it conforms to the contract, 
+                declare it to implement HousePet and it will be used where any HousePet is usable.
+
+Interface Implementation -
+    Interfaces are NOT Classes
+        - Similar to writing a Class, but is a totally different concept.
+        <> Interface = 
+                - a list of specifications for a Class to follow.
+                - states behaviors that a Class must implement.
+                - a group of related methods with empty bodies.
+                - can contain constant declarations (e.g. static final class variables).
+                        - all constant values defined in an interface are implicitly:
+                                --> public, static, and final
+                        - therefore, you are free to omit these modifiers.
+                - to implement any interface:
+                        - use keyword "implements" in our Class definitions.
+                        - however, there is One Rule:
+                                --> a class that implements an interface must implement
+                                    all methods that were defined in the interface definition
+                                    besides "default" and "static".
+                - e.g. Home management app (an Internet of Things system (IoT))
+                        - may implement an "interface" --> ACPowerable
+                        - to keep track of the statuses of many electrical appliances in a home.
+        <> Class = 
+                - describes the attributes and behaviors of an Object.
+
+    Interface Methods -
+        3 Interface Method Types:
+            1. default - 
+                    - allow developers to create default methods that do not need Implementation.
+            2. Static - 
+                    - are interface member methods.
+                    - implemented on the interface level and are called on the interface, NOT the class.
+                    - thus, you CANNOT override static interface methods.
+                    - you can only call them directly on the interface they were declared.
+            3. Abstract - 
+                    - are methods that are declared without implementation.
+                    - implicit method type 
+                    - if NO declaration of either "Static" or "default", the method will be "Abstract"
+
+    
