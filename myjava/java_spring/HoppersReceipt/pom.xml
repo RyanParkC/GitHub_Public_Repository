@@ -8,26 +8,26 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.human.hello.controller</groupId>
-	<artifactId>hello_human</artifactId>
+	<groupId>com.receipt.hoppers.controller</groupId>
+	<artifactId>HoppersReceipt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>hello_human</name>
+	<name>HoppersReceipt</name>
 	<description>First project in Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-		<!-- Added for JSP-->
-        <dependency>
-            <groupId>org.apache.tomcat.embed</groupId>
-            <artifactId>tomcat-embed-jasper</artifactId>
+		<!--  JSP/JSTL -->
+	    <dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
-        <dependency>
+		<dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
-        <!-- // -->
+	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
