@@ -1,0 +1,13 @@
+h1 {
+    color: blue;
+}
+.container {
+	text-align: center;
+	margin-top: 200px;
+}
+.currenttime {
+	color: green;	
+}
+.fulldate {
+	color: purple;	
+}

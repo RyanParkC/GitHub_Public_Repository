@@ -1,0 +1,1 @@
+alert("Welcome! Please choose a template! - from display.js");

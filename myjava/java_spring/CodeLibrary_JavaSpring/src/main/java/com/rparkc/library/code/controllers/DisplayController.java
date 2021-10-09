@@ -1,10 +1,12 @@
-package com.date.display.controller;
+package com.rparkc.library.code.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 @Controller
+
+@RequestMapping("/display")
 public class DisplayController {
 	
 	// Routes -----------------------------------------
@@ -12,9 +14,9 @@ public class DisplayController {
 	// src/main/webapp/WEB-INF > .jsp files
 	
 	// Index - 
-	@RequestMapping("/")
+	@RequestMapping("")
 	public String index() {
-	    return "index.jsp";
+	    return "displaydate.jsp";
 	}
 	
 	// Date - 
