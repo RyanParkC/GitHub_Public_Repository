@@ -14,6 +14,11 @@
 <body>
     <div class="container">
         <h2 class="my-3" id="choosetemplate">Choose a URL Route Below:</h2>
+        <!-- Note -->
+        <div class="border border-dark my-4 px-3 py-3" style="width:370px">
+            <p class="text-muted">Note: If rendering .jsp file use --> @Controller</p>
+            <p class="text-muted mb-1">Otherwise, use --> @RestController</p>
+        </div>
         <!-- Hello Human -->
         <span>
             <h4><a href="/hello">Hello Human (searchQuery)</a></h4>
@@ -38,10 +43,15 @@
         <span>
             <h4><a href="/counter">Counter (++ count)</a></h4>
         </span>
-        <div class="border border-dark my-4">
-            <h5>Note: If rendering .jsp file use --> @Controller</h5>
-            <h5>Otherwise, use --> @RestController</h5>
-        </div>
+        <!-- Omikuji Form (Form Submission) -->
+        <span>
+            <h4><a href="/omikuji">Omikuji Form Submission</a></h4>
+        </span>
+        <!-- Ninja Gold Game (Adding/Subtracting Gold and Display)-->
+        <span>
+            <h4><a href="/ninjaGold">Ninja Gold Game (Display +/- Gold)</a></h4>
+        </span>
+
     </div>
 </body>
 </html>
