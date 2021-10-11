@@ -53,7 +53,7 @@ public class BookService {
 	}
 
 	// UPDATE - a book
-	public Book updateBook(Long id, String title, String desc, String lang, Integer numOfPages) {
+	public Book updateBook(Long id, String title, String description, String language, Integer numberOfPages) {
 		
 		Optional<Book> getBook = bookRepository.findById(id);
 		
@@ -61,9 +61,9 @@ public class BookService {
 			Book updateBook = getBook.get();
 			
 			updateBook.setTitle(title);
-			updateBook.setLanguage(lang);
-			updateBook.setDescription(desc);
-			updateBook.setNumberOfPages(numOfPages);
+			updateBook.setLanguage(language);
+			updateBook.setDescription(description);
+			updateBook.setNumberOfPages(numberOfPages);
 			
 			return bookRepository.save(updateBook);
 		}

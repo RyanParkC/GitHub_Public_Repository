@@ -56,11 +56,11 @@ public class Book {
     	
     }
 
-	public Book(String title, String desc, String lang, int pages) {
+	public Book(String title, String description, String language, int numberOfPages) {
         this.title = title;
-        this.description = desc;
-        this.language = lang;
-        this.numberOfPages = pages;
+        this.description = description;
+        this.language = language;
+        this.numberOfPages = numberOfPages;
     }
     
 	// Getters and Setters ------------------------------------------------

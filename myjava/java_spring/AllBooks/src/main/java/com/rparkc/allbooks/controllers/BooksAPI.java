@@ -33,18 +33,17 @@ public class BooksAPI {
 	public List<Book> index() {
 		return bookService.allBooks();
 	}
-	
 
 	// CRUD Methods -------------------------------
 	
 	// CREATE - NEW Book
 	@RequestMapping(value = "/api/books", method = RequestMethod.POST)
 	public Book create(@RequestParam(value = "title") String title, 
-			@RequestParam(value = "description") String desc,
-			@RequestParam(value = "language") String lang, 
-			@RequestParam(value = "pages") Integer numOfPages) {
+			@RequestParam(value = "description") String description,
+			@RequestParam(value = "language") String language, 
+			@RequestParam(value = "numberOfPages") Integer numberOfPages) {
 		
-		Book book = new Book(title, desc, lang, numOfPages);
+		Book book = new Book(title, description, language, numberOfPages);
 		return bookService.createBook(book);
 	}
 	
@@ -60,10 +59,10 @@ public class BooksAPI {
 	public Book update(
 			@PathVariable("id") Long id, 
 			@RequestParam(value = "title") String title,
-			@RequestParam(value = "description") String desc, 
-			@RequestParam(value = "language") String lang,
-			@RequestParam(value = "pages") Integer numOfPages) {
-		Book book = bookService.updateBook(id, title, desc, lang, numOfPages);
+			@RequestParam(value = "description") String description, 
+			@RequestParam(value = "language") String language,
+			@RequestParam(value = "numberOfPages") Integer numberOfPages) {
+		Book book = bookService.updateBook(id, title, description, language, numberOfPages);
 		return book;
 	}
 	
