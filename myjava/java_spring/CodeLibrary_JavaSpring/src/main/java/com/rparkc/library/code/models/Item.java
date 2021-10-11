@@ -1,7 +1,7 @@
 package com.rparkc.library.code.models;
 
 public class Item {
-	
+
 	// Member Variables -------------------------
 	private String name;
 	private double price;

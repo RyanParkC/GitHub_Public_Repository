@@ -1,6 +1,5 @@
 package com.rparkc.library.code.controllers;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,4 +31,3 @@ public class FruityController {
 		return "fruityloops.jsp";
 	}
 }
-

@@ -13,12 +13,12 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>CodeLibrary_JavaSpring</name>
-	<description>Code Library for Java Spring</description>
+	<description>Lion&apos;s Code Library for Java Spring</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-
+	
 	    <!-- For JSP and JSTL -->
 	    <dependency>
 	        <groupId>org.apache.tomcat.embed</groupId>
@@ -47,7 +47,7 @@
 	        <artifactId>jquery</artifactId>
 	        <version>3.6.0</version>
 	    </dependency>
-    
+	    
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>

@@ -1,5 +1,3 @@
-// RUN CODE FROM THIS FILE
-
 package com.rparkc.library.code;
 
 import org.springframework.boot.SpringApplication;
