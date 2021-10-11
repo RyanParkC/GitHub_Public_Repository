@@ -18,6 +18,10 @@ public class NinjaGoldController {
 	
 	// URL Routes --------------------------------------------------------------------------------------------------
 	
+	// Model model - example of "Dependency Injection"
+	//				 Code that we have parameters that we never provide arguments for.
+	//				 We declare the type and name them, and then just hope that something will provide the expected input.
+	
 	@RequestMapping("")
 	public String index(HttpSession session, Model model) {
 		

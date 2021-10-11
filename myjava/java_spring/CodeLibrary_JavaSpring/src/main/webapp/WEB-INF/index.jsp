@@ -15,9 +15,9 @@
     <div class="container">
         <h2 class="my-3" id="choosetemplate">Choose a URL Route Below:</h2>
         <!-- Note -->
-        <div class="border border-dark my-4 px-3 py-3" style="width:370px">
-            <p class="text-muted">Note: If rendering .jsp file use --> @Controller</p>
-            <p class="text-muted mb-1">Otherwise, use --> @RestController</p>
+        <div class="border border-dark my-4 px-3 py-3" style="width:650px">
+            <p class="text-muted">Note: If rendering .jsp file use (we will be using this most of the time)--> @Controller</p>
+            <p class="text-muted mb-1">Otherwise, use (we won't be using this much)--> @RestController</p>
         </div>
         <!-- Hello Human -->
         <span>
