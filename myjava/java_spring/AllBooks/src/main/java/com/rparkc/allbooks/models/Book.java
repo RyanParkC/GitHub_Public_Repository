@@ -20,22 +20,22 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Table(name="books")	// sets this as a table in the database
 public class Book {
 	
-	// Member Variable(s) --------------------------------------------------
+	// Member Variable(s) and Validations ----------------------------------
 	
     @Id														// sets this as the primary key
     @GeneratedValue(strategy = GenerationType.IDENTITY)		// sets this as an auto-incrementing value
     private Long id;
-    
+    										// @Size - adds validation that the column must be in the specified range
     @NotNull								// @NotNull - adds validation that the column must be null
-    @Size(min = 5, max = 200)				// @Size - adds validation that the column must be in the specified range
+    @Size(min = 5, max = 200, message="Title must be at least 5 characters.")
     private String title;
     
     @NotNull
-    @Size(min = 5, max = 200)
+    @Size(min = 5, max = 200, message="Description must be at least 5 characters.")
     private String description;
     
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 3, max = 40, message="Language must be at least 3 characters.")
     private String language;
     
     @NotNull
@@ -56,8 +56,13 @@ public class Book {
     	
     }
 
-	public Book(String title, String description, String language, int numberOfPages) {
-        this.title = title;
+	public Book(
+			String title, 
+			String description, 
+			String language, 
+			int numberOfPages) {
+        
+		this.title = title;
         this.description = description;
         this.language = language;
         this.numberOfPages = numberOfPages;
